@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nastasia Soilih – Chargée de projet Innovation </title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+
+    header.hero {
+      background: linear-gradient(to right, #db2777, #ec4899);
+      color: white;
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+
+    header.hero h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    header.hero p {
+      font-size: 1.25rem;
+    }
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.project img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0.5rem;
+  background-color: white;
+  margin-top: 1rem;
+}
+    section.content-box {
+      margin-top: -2.5rem;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .box {
+      max-width: 64rem;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-top: 2rem;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5rem;
+    }
+
+    section.projects {
+      padding: 4rem 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.875rem;
+      font-weight: bold;
+      color: #db2777;
+      margin-bottom: 2rem;
+    }
+
+    .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+    @media (min-width: 768px) {
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .project h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      list-style: disc;
+    }
+
+    section.cta {
+      text-align: center;
+      margin: 4rem 1rem;
+    }
+
+    .cta-box {
+      max-width: 40rem;
+      margin: 0 auto;
+      background: #fce7f3;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .cta-box h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #db2777;
+      margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+      color: #374151;
+      margin-bottom: 1rem;
+    }
+
+    .cta-box a {
+      display: inline-block;
+      background: #db2777;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .cta-box a:hover {
+      background: #be185d;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #db2777;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+section.environments {
+  padding: 4rem 1rem;
+  background: #fff;
+}
+    .env-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    text-align: left;
+  }
+
+  .env-block {
+    flex: 1 1 250px;
+    max-width: 300px;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .env-block h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
+
+  .env-block ul {
+    padding-left: 1.2rem;
+  }
+
+  .env-title {
+    text-align: center;
+    color: #e91e63;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+.timeline-section {
+  padding: 4rem 1rem;
+  background: #fff;
+}
+
+.timeline-container {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 3rem;
+  padding: 3rem 1rem 5rem;
+  justify-content: flex-start;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #db2777;
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  flex: 0 0 auto;
+  min-width: 250px;
+  max-width: 280px;
+  background: white;
+  padding: 1.5rem 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  scroll-snap-align: center;
+  z-index: 1;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background-color: #db2777;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #db2777;
+  z-index: 2;
+}
+
+.timeline-item h4 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1rem;
+  color: #db2777;
+}
+
+.timeline-item p {
+  line-height: 1.5;
+  font-size: 0.9rem;
+  color: #374151;
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 1rem;
+  }
+
+ @media (min-width: 768px) and (max-width: 1024px) {
+  .timeline-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+  .timeline-container::before {
+    display: none;
+  }
+
+  .timeline-item {
+    min-width: 90%;
+    max-width: 95%;
+  }
+
+  .timeline-item::before {
+    top: -10px;
+    left: 50%;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Chargée de projet Innovation</h1>
+    <p>15+ ans d’expérience | Innovation & stratégie produit | Curieuse, passionnée, engagée</p>
+  </header>
+
+  <section class="content-box">
+    <div class="box">
+      <p>Product Owner et Cheffe de projet IT, je cumule plus de 15 ans d’expérience dans l’informatique, dont les 5 dernières années sur des produits liés à la DATA/IA, aux opérations bancaires, à la fiscalité, au voyage et aux frais de déplacement</p>
+      <p>Je navigue avec agilité entre les équipes techniques, coordination transverse et stratégie d'entreprise.</p>
+      <p>Entrepreneuse et ancienne Responsable digital, je place l’innovation, l’écoute utilisateur et le business au cœur de mes démarches.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/3sV7fqw509s?si=sV5pcSO3InFqjFnq" title="Présentation vidéo" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+<section class="timeline-section">
+  <h2 class="section-title">Parcours</h2>
+  <div class="timeline-container">
+    <div class="timeline-item">
+      <h4>2022–2025</h4>
+      <p>Agile Master & Pilotage de projet<br><strong>NEOSOFT / MAIF</strong></p>
+    </div>
+    <div class="timeline-item">
+      <h4>2020–2022</h4>
+      <p>1st Product Manager<br><strong> Cosmopolis / Thinkeo</strong></p>
+    </div>
+    <div class="timeline-item">
+      <h4>2018–2020</h4>
+      <p>Responsable Web & Social Media<br><strong>O’BOX Groupe</strong></p>
+    </div>
+    <div class="timeline-item">
+      <h4>2015–2016</h4>
+      <p>Transfo digitale et Dév. commercial<br><strong>Galerie Arsinoé</strong></p>
+    </div>
+    <div class="timeline-item">
+      <h4>2014–2017</h4>
+      <p>CEO<br><strong>MissStartup</strong></p>
+    </div>
+    <div class="timeline-item">
+      <h4>2011–2013</h4>
+      <p>Fondatrice<br><strong>ANOSFETES</strong></p>
+    </div>
+    <div class="timeline-item">
+      <h4>2005–2009</h4>
+      <p>Com' & Informatique<br><strong>CSI-PC (ent.familiale)</strong></p>
+    </div>
+  </div>
+
+<section class="certifications">
+  <h2 class="section-title">Certifications</h2>
+  <h3 style="text-align: center;"><strong>Recommandations et certifications disponibles sur demande.</strong></h3>
+  
+  <div class="project-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; justify-items: center;">
+
+    <div class="certification">
+      <a href="https://www.scrum.org/professional-scrum-product-owner-i-certification" target="_blank" rel="noopener">
+        <img src="https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2022-09/asset_40pspo_i.png" style="max-width: 300px; width: 100%; border-radius: 8px;">
+      </a>
+      <h3 style="text-align: center;"><strong>Certification Product Owner</strong></h3>
+    </div>
+
+    <div class="certification">
+      <a href="https://management30.com/certifications/" target="_blank" rel="noopener">
+        <img src="https://management30.com/wp-content/uploads/2024/02/header-certficates.png" style="max-width: 300px; width: 100%; border-radius: 8px;">
+      </a>
+      <h3 style="text-align: center;"><strong>Certification Management 3.0</strong></h3>
+    </div>
+
+  </div>
+</section>
+
+
+</section>  
+  <section class="projects">
+    <h2 class="section-title">Projets phares</h2>
+    <div class="project-grid">
+
+      <div class="project">
+        <div>
+          <h3><strong>📚 1st Product Manager</strong></h3>
+          <p>J’ai accompagné les fondateurs de Thinkeo, une <strong>plateforme de Knowledge Management</strong>, dès les premières étapes de son développement produit. Mon rôle a couvert plusieurs volets en collaboration directe avec le CTO : </p>
+          <ul>
+            <li>Définition de la roadmap produit</li>
+            <li>Gestion du backlog et priorisation</li>
+            <li>Réalisation des tests QA front-end</li>
+            <li>Reporting de bugs et contribution à la qualité logicielle</li>
+            <li>Traduction des librairies back office</li>
+            <li>Mise en place progressive du cadre Scrum permettant de stabiliser l’équipe produit et de structurer les itérations de développement.</li>
+          </ul>
+        <p><strong>Impacts :</strong> accompagnement stratégique produit, levée de fonds réussie (1M€), structuration agile, forte autonomie de l’équipe.</p>
+          
+          <img src="https://investinbordeaux.fr/wp-content/uploads/2021/01/Sans-titre-1.jpg" alt="Thinkeo illustration">
+        </div>
+
+      </div>
+      <div class="project">
+        <div>
+          <h3><strong>🎯 Pilotage de projet</strong></h3>
+    <p>J’interviens en tant que <strong>Product Owner</strong> ou <strong>Cheffe de projet</strong> pour piloter des projets stratégiques à fort enjeu, en particulier lors de phases critiques comme les kick-offs ou la mise en place de gouvernance transverse.</p>
+    <ul>
+      <li><strong>Migration SI fiscal (CEGID)</strong> : Pilotage de migration SaaS en urgence avec l'éditeur, forte contrainte de temps et faible disponibilité des équipes. Résultat : bascule réussie, respect des délais, forte adhésion des parties prenantes.</li>
+      <li><strong>Kick-off & dossier COPIL</strong> : Co-construction de dossiers stratégiques, refonte des présentations pour obtenir les financements même après un premier refus.</li>
+      <li><strong>Déploiement Salesforce Cloud dans le cadre du Vendée Globe</strong> : Négociation des licences Salesforce, élaboration du dossier d'appel d'offres, intégration et formation des utilisateurs.</li>
+    </ul>
+    <p><strong>Résultats :</strong> mobilisation d’équipes malgré des contraintes fortes, respect des échéances, bascule sans rupture, satisfaction des utilisateurs et parties prenantes.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwK1AFbMcR2oJ5FGGivOT4f0r7bHv1AJSyjQ&s" alt="ERP CEGID Gestion financière">
+        </div>
+      </div>
+
+      <div class="project">
+        <div>
+          <h3><strong>🤖 DATA & IA</strong></h3>
+          <p>Expérimentations menées autour de l’intelligence artificielle et de la donnée avec les métiers / utilisateurs : extraction automatique d’informations, catégorisation, moteur de recherche intelligent…</p>
+          <ul>
+            <li>Contribution à la conception de cas d’usage, à la réalisation de tests, à la documentation des résultats et au challenge des modèles.</li>
+            <li>Co-oanimation des ateliers d’idéation pour identifier des pistes d'amélioration de l'Agent IA et participé à l’acculturation à l'IA au grand public.</li>
+          </ul>
+      <p><strong>Résultats :</strong> gain de temps pour les utilisateurs, meilleure compréhension de l’IA, adoption facilitée.</p>
+          
+          <img src="https://blog.digitalcook.fr/wp-content/uploads/2021/06/big-data-and-et-artificial-intelligence.jpg" alt="DATA & IA">
+        </div>
+      </div>
+      <div class="project">
+        <div>
+          <h3><strong>🛠️ Documentation</strong></h3>
+          <ul>
+            <li><strong>Travaux OpenSource OSS <a href="https://medium.com/oss-by-maif/eurybia-une-nouvelle-solution-ossbymaif-pour-une-intelligence-artificielle-plus-ma%C3%AEtris%C3%A9e-843e651a2ced" target="_blank" rel="noopener noreferrer">Eurybia</a> &amp; <a href="https://maif.github.io/shapash/" target="_blank" rel="noopener noreferrer">Shapash</a> :</strong> Redesign de l’illustration d’Eurybia sur Figma adoptée par les Data Scientists. Impulsion UX pour Shapash. Ces éléments sont toujours en ligne après 3 ans.</li>
+            <li>Travaux cartographie des produits pour structurer un référentiel Produit en collaboration avec de nombreuses parties prenantes.</li>
+          </ul>
+      <p><strong>Résultats :</strong> documentations plus claires, continuité des projets, meilleures coordinations, adhésions des parties prenantes.</p>
+        <img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*JfmSQHO-YML6egTUdSHifg.png" alt="Documentation Shapash et Eurybia">    
+        </div>
+      </div>
+<div class="project">
+        <div>
+          <h3><strong>🎨ArtOflight</strong></h3>
+    <p><strong>Objectif :</strong> Comment redonner le pouvoir numérique aux acteurs artistiques?</p>
+    <p>ArtOfLight vend des œuvres d’art de nos artistes coup de cœur et accompagne les acteurs culturels dans leur digitalisation :</p>
+    <ul style="padding-left: 1.2rem;">
+      <li>Vente éphémère d’œuvres d’art via notre plateforme</li>
+      <li>Solutions sur mesure pour musées, galeries, éditeurs, libraires : sites internet, plateformes d’enchères, boutiques en ligne, apps mobiles</li>
+      </ul>
+    <p><strong>Résultats :</strong></p>
+    <ul>
+      <li>Gain de temps pour les clients qui bénéficient de ma vision artistique alliée à une expertise produit numérique.</li>
+      <li>Conception de services numériques adaptés à la réalité des artistes, mise en valeur de leurs univers via des expériences digitales élégantes et efficaces.</li>
+    </ul>
+    <img src="https://artoflight.fr/wp-content/uploads/2025/05/ArtOfLight_Logo.png" alt="Logo ArtOfLight">
+        </div>
+      </div>
+      <div class="project">
+        <div>
+          <h3><strong>💡MissStartup</strong></h3>
+      <p><strong>Mission :</strong> Ne plus jamais rater un événement numérique près de chez vous !</p>
+      <p>À une époque où Meetup et Eventbrite étaient encore balbutiants, MissStartup informait les passionnés de tech, startup et numérique sur tous les événements à ne pas manquer à Paris:</p>
+          <ul>
+            <li>Recensement intelligent des événements numériques</li>
+            <li>Service traiteur thématique pour les événements techs</li>
+          </ul>
+            <p><strong>Pourquoi c’était innovant ?</strong></p>
+            <ul>
+            <li>Explosion des initiatives dans le digital, mais aucune plateforme centralisée. Les utilisateurs se sentaient perdus, isolés, en manque de repères malgré leur soif d'apprendre.</li>
+            <li>De l'espace de coworking à midi au meetup du soir, l'entrepreneur type passait ses journées à manger ce qu'il trouvait dans les lieux techs : saucissons, bières, chips et pizzas</li>
+            </ul>
+      <p><strong>Notre réponse ?</strong></p>
+            <ul>
+            <li>En 1er lieu : Une application mobile prenant en compte votre géolocalisation, votre agenda et vos préférences pour vous recommander les événements les plus pertinents.</li>
+            <li>En 2ème temps : un service traiteur thématique autour de la forêt, espace, healthy...pour les événements techs, concoté maison par l'ambassadrice des startups :  MissStartup,</li>
+          </ul>
+           <img src="https://github.com/Nastasia29/homepage/blob/main/images/Capture%20d'%C3%A9cran%202025-06-02%20002720.png?raw=true" alt="MissStartup">         
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="projects">
+  <h2 class="section-title">🧠 Talk & Formations</h2>
+  <div class="project-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+
+    <div class="project">
+      <img src="https://github.com/Nastasia29/homepage/blob/main/images/IA%20et%20Agilit%C3%A9%20du%20fantasme%20%C3%A0%20la%20r%C3%A9alit%C3%A9%20de%20la%20conception%20de%20produit.jpg?raw=true" style="width: 100%; border-radius: 8px;">
+      <h3><strong>🤖 IA & Agilité : du fantasme à la réalité</strong></h3>
+      <p>Ce <strong>talk</strong> vous propose une immersion dans le monde de l'intelligence artificielle et son intégration dans le développement de produits.
+        À travers une exploration des concepts de symbiose homme-machine (Licklider), des étapes de l'IA et des cas pratiques, on échange sur comment l’IA transforme la conception de produits et comment l'agilité permet de l’intégrer efficacement.
+      <p>Idéal pour Chefs de projet, étudiants en Informatique et métiers / utilisateurs d'IA cherchant à s’acculturer à cette révolution technologique.</p>
+      <p><strong>Thèmes :</strong> Culture IA, design de cas d’usage, limites éthiques, collaboration IA/humain, tests & validation, illusion de productivité.</p>
+    </div>
+
+        <div class="project">
+      <img src="https://github.com/Nastasia29/homepage/blob/main/images/L%E2%80%99Agilit%C3%A9%20Autrement%20Cours%20.jpg?raw=true" style="width: 100%; border-radius: 8px;">
+      <h3><strong>🌈 L’agilité autrement</strong></h3>
+      <p>Ce <strong>cours</strong> que j'ai donné à des étudiants en 3ème année de Science des données à l'Université de Poitiers (Niort) explore l’agilité en dehors des sentiers battus : de la Sagrada Familia à la construction d’un avion, en passant par les courants du CRAFT, Management 3.0 ou encore les entreprises libérées. Ce parcours questionne les dogmes, valorise l’adaptabilité, le sur-mesure et les soft skills clés pour incarner une agilité vivante, au service des équipes et des produits.
+Un format interactif, inspirant et décalé, pensé pour étudiants, chefs de projet et futurs leaders agiles.</p>
+      <p><strong>Thèmes :</strong> postures collectives, adaptabilité hors Scrum/SAFe, Sagrada Familia, manamgement 3.0, entreprises libérées.</p>
+    </div>
+
+    <div class="project">
+      <img src="https://github.com/Nastasia29/homepage/blob/main/images/Introduction%20%C3%A0%20la%20Permaculture.jpg?raw=true" alt="Image permaculture" style="width: 100%; border-radius: 8px;">
+      <h3><strong>🌿 Introduction à la permaculture</strong></h3>
+      <p>Et si les principes du vivant pouvaient inspirer notre manière de travailler ? Ce <strong>cours</strong> propose une immersion dans l’univers de la permaculture – ses origines, ses éthiques, ses pratiques – et explore ses ponts possibles avec le design de projets et les métiers du numérique responsable.
+À travers des exemples concrets (potagers, biodiversité, adaptation au climat) et des outils simples (zonage, méthode BISOU, règle des 5R), les étudiants découvrent comment repenser leurs environnements – pro ou perso – de manière résiliente, éthique et systémique.
+Un format inspirant, accessible à tous, pour (re)mettre du sens dans nos façons de faire.</p>
+      <p><strong>Thèmes :</strong> interconnexion, frugalité, régénération, design de systèmes vivants.</p>
+    </div>
+
+  </div>
+</section>
+  
+<section class="environments">  
+<h2 class="env-title">Passions</h2>
+
+<div class="env-container">
+
+  <div class="env-block">
+    <h3>🛠️ Outils à approfondir</h3>
+    <ul>
+      <li>Postman, Swagger, GitHub</li>
+      <li>Figma, Illustrator</li>
+      <li>Salesforce, CEGID</li>
+    </ul>
+  </div>
+  <div class="env-block">
+    <h3>💡 Thématiques d’émerveillement</h3>
+    <ul>
+      <li>Cloud, Sécurité by Design</li>
+      <li>CRAFT, DevOps</li>
+      <li>Design system, UX/UI</li>
+    </ul>
+  </div>
+  <div class="env-block">
+    <h3>🌿 Intérêts personnels</h3>
+    <ul>
+      <li>Permaculture & agroforesterie</li>
+      <li>Culture, gastronomie, arts</li>
+      <li>Événements techs, talks & enseignement</li>
+    </ul>
+  </div>
+
+<section class="projects">
+  <h2 class="section-title">📌 Mes articles LinkedIn</h2>
+<div class="project-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+    <div class="project">
+      <a href="https://www.linkedin.com/pulse/rust-aux-product-managers-po-guide-rapide-et-efficace-nastasia-soilih-4udde" target="_blank" style="text-decoration: none; color: inherit;">
+        <h3>Rust aux Product Managers & PO : guide rapide et efficace 📌</h3>
+        <img src="https://media.licdn.com/dms/image/v2/D4E12AQEoVUcYB6zfTg/article-cover_image-shrink_720_1280/B4EZUbVNkXHMAY-/0/1739920303962?e=1755129600&v=beta&t=OUR-0ykplABmIH0k6JbImNcIViQyFHUc0Ml52U-M1p0" alt="Rust pour PM">
+        <p>En gestion de produit, comprendre les technos utilisées par les équipes de développement est un atout majeur. Sans être développeur, connaître les principes clés d’un langage comme Rust permet de mieux collaborer avec les équipes techniques et de prendre des décisions éclairées sur l'architecture produit.</p>
+
+<p>Passionnée par l’IT, la semaine dernière les étoiles étaient bien alignées pour que je participe au #Meetup de #SiliconChalet qui se déroulait à infomaniak | The Ethical Cloud à Genève. Les places étaient full en quelques jours. Mais pour ceux qui me connaissent, quand je veux vraiment quelque chose, je fonce! C'est là que j'ai contacté 🌥️Eric Duquesnoy qui gère le Meetup et le Discord de Silicon Chalet que je suis membre pour qu'ils me réservent une place et bingo, j'ai eu ma place d'entrée seule sans passer par mon Joker secret ;-) Mais mon Joker secret sait que j'avais envie non seulement de participer au meetup mais également de découvrir Infomaniak que j'entends parler depuis pas mal de temps ! Et voilà, chose faite ! J’ai eu le privilège de visiter les locaux d'Infomaniak avec Vincent Berset qui est en plus un Maitre en Rust ! Je n’ai pas pris beaucoup de photos, mais croyez-moi : si vous êtes un Dev’ passionné, vous vous sentirez comme un petit poisson dans l’eau au sein de leurs locaux. Il y a même un vrai aquarium super stylé situé au milieu des équipes Support...😄</p>
+
+<p>Assez de bavardage, passons aux choses sérieuses ! [...] </p>
+      </a>
+    </div>
+
+    <div class="project">
+      <a href="https://www.linkedin.com/pulse/retour-sur-lagile-niort-une-journ%C3%A9e-riche-en-et-nastasia-soilih-skjue" target="_blank" style="text-decoration: none; color: inherit;">
+        <h3>🚀 Retour sur l'Agile Niort : une journée riche en enseignements et en rencontres inspirantes !</h3>
+        <img src="https://media.licdn.com/dms/image/v2/D4E12AQFcfN5FeY-Fvw/article-cover_image-shrink_720_1280/B4EZXKVgpkGYAI-/0/1742856419133?e=1755129600&v=beta&t=zoqNlpbuT_vSCI14bn8kPaCFZ3W5VnTC2PS1rBvf2-M" alt="Agile Niort">
+        <p>🔹 Keynote d' Anne Gabrillagues : <strong>"Et si l’agilité changeait notre façon de choisir ?"</strong>
+<p>J’avais hâte d’assister à cette conférence ! Anne m’inspire au quotidien grâce à ses posts et aux communautés où j’ai toujours plaisir à la lire et l’écouter. Cette fois, c’était enfin l’occasion de la voir en vrai !
+
+Sans surprise, j’ai adoré sa session, qui correspond parfaitement à mon mindset et à ma façon de travailler. Comme elle, je suis convaincue de l'importance de rendre les règles visibles au sein des équipes, notamment grâce aux techniques du Management 3.0, comme le "Delegation Poker", ou encore la mise en place d'une charte d'équipe, que j’aime appeler Manifesto. Bien sûr, selon les équipes, cette construction peut prendre plus ou moins de temps.</p>
+
+<p>J'ai également retenu la nécessité de collecter des données factuelles pour mesurer l'impact des décisions, en adoptant une démarche expérimentale inspirée des principes du Lean. Anne nous a rappelé l’importance de clarifier nos objectifs en product management : de quoi parle-t-on exactement ? Quel résultat attend-on ? Quels risques prenons-nous à ne pas agir ? Elle nous a également partagé des outils comme la démarche A3, les scénarios "What if", et la collecte quotidienne de données pour nous permettent de préparer un bilan critique plus éclairé. [...]</p>
+      </a>
+    </div>
+
+    <div class="project">
+      <a href="https://www.linkedin.com/pulse/quels-outils-de-mesure-utilisez-vous-dans-la-gestion-vos-soilih" target="_blank" style="text-decoration: none; color: inherit;">
+        <h3>Quels outils de mesure utilisez-vous dans la gestion de vos projets ?</h3>
+        <img src="https://media.licdn.com/dms/image/v2/C4D12AQGKwTAnpzMU8A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1646297842127?e=1755129600&v=beta&t=co9bD4yOYVIsA_4HOynZw6OcXNZPouBFQpOz1GyrPWo" alt="Outils de mesure">
+        <p>Durant la réalisation d'un produit développé avec le cadre de travail Scrum, il est impératif d’assurer un suivi au quotidien, de mettre en place des moyens de mesure pendant le Sprint. Le but est de suivre l’évolution du projet, de détecter les anomalies, de lever les alertes et d’être proactif dans la recherche d’amélioration continue. 
+
+<p>En entretien, je n'avais pas posé clairement les différentes possibilités : merci à mon stress qui se manifeste dès que je sais que je suis évaluée 🥺 Pourtant, dans mon plan d'action écrit, j'avais rassemblé ces 6 différents moyens à mettre en place.</p>
+
+<p>✅ Vélocité :  indicateur qui permet de déterminer l’effort qu’est capable de fournir une équipe de développement pour la réalisation complète des tâches programmées dans un sprint. Elle peut être mesurée en nombre de points d’effort ou jours idéaux (on évite de penser en heure). D'après mes différentes lectures, la vélocité reste un point polémique à définir et ce sera notre prochain sujet de post, n'hésitez pas à me suivre !  La vidéo de la Minute Agile ci-dessous est celle qui permet de mieux comprendre le calcul de la vélocité pendant un Sprint. Pour avoir une moyenne fiable de la vélocité de l'équipe sur l'ensemble du projet, mieux vaut partir sur un minimum de 5 sprints. [...]</p>
+      </a>
+    </div>
+  </div>
+</section>
+  <section class="cta">
+    <div class="cta-box">
+      <h2>Envie d’échanger ?</h2>
+      <p>Je suis disponible pour discuter de vos projets ou de vos besoins produit.</p>
+      <a href="mailto:nastasiasjob@gmail.com">Me contacter</a>
+    </div>
+  </section>
+</section>  
+<footer>
+  <p>
+    <a href="https://www.linkedin.com/in/nnsoilih/" target="_blank" style="color: white; text-decoration: none;">
+      © 2025 - Nastasia SOILIH
+    </a>
+  </p>
+</footer>
+</body>
+</html>
